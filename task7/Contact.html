@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-uppercase logo-text m-0">Technovert</h1>
+    </header>
+    <nav class="d-flex justify-content-between">
+      <div class="nav-links-container p-0 m-0">
+        <ul class="p-0 m-0 nav text-uppercase font-size-md font-wt-1000">
+          <li class="nav-item p-2 pl-3"><a href="#">Home</a></li>
+          <li class="nav-item p-2 pl-3"><a href="#">Services</a></li>
+          <li class="nav-item p-2 pl-3">
+            <a href="Careers.html">Careers</a>
+          </li>
+          <li class="nav-item p-2 pl-3 active"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="my-1 mr-3">
+        <img src="blog-icon.png" alt="image failed to load" />
+      </div>
+    </nav>
+    <div class="container py-2">
+      <p id="required-error" class="font-weight-bold ml-4">
+        Please fill all the required field below
+      </p>
+      <form
+        action="#"
+        class="pl-5 d-inline-block py-2 box-shadow"
+        id="myForm"
+        name="myForm"
+        onsubmit="return validateForm()"
+      >
+        <div class="row mb-3">
+          <label for="name" class="font-weight-bold w-190">My Name:</label>
+          <input
+            type="text "
+            class="border-basic"
+            id="name"
+            name="name"
+            onblur="validateField(id)"
+          /><span id="name-required" class="imp-field color-red">*</span>
+        </div>
+        <div class="row mb-3">
+          <label for="email" class="font-weight-bold w-190">My Email:</label>
+          <input
+            class="border-basic"
+            type="text"
+            id="email"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            name="email"
+            onblur="validateField(id)"
+          /><span id="email-required" class="imp-field color-red">*</span>
+        </div>
+        <div class="row mb-3">
+          <label for="tele" class="font-weight-bold w-190"
+            >My Telephone Number:</label
+          >
+          <input type="text " class="border-basic" id="tele" />
+        </div>
+        <div class="row mb-3">
+          <label for="org" class="font-weight-bold w-190"
+            >My Organization Name:</label
+          >
+          <input
+            type="text "
+            class="border-basic"
+            id="org"
+            name="org"
+            onblur="validateField(id)"
+          /><span id="org-required" class="imp-field color-red">*</span>
+        </div>
+        <div class="row mb-3">
+          <label for="city" class="font-weight-bold w-190">My City:</label>
+          <input type="text " class="border-basic" id="city" />
+        </div>
+        <div class="row mb-3">
+          <div class="w-190 d-flex align-items-center">
+            <label for="gender" class="font-weight-bold">Gender: </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="female"
+              name="optgender"
+              value="Female"
+              onchange="greetingUser('Lady')"
+            />
+            <label for="female" class="ml-2"> Female</label>
+            <div></div>
+            <input
+              type="radio"
+              id="male"
+              name="optgender"
+              value="Male"
+              onchange="greetingUser('Sir')"
+              checked
+            />
+            <label for="male" class="ml-2"> Male</label>
+            <div></div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="font-weight-bold w-190" for="province"
+            >My State or Province:</label
+          >
+          <select
+            name="state"
+            id="province"
+            class="state-select border-basic"
+            onchange="promoCode()"
+          >
+            <option value="0" selected>Select State or Province</option>
+            <option value="indore">Indore</option>
+            <option value="Mp">Mp</option>
+            <option value="Andhrapradesh">Andhrapradesh</option>
+            <option value="Delhi">Delhi</option>
+          </select>
+        </div>
+        <div class="row mb-3">
+          <div class="w-190 d-flex align-items-center">
+            <label for="contact-priority" class="font-weight-bold"
+              >Plz Contact me By:
+            </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="contact-priority-email"
+              name="optradio"
+              value="email"
+              checked
+            />
+            <label for="contact-priority-email" class="ml-2"> Email</label>
+            <div></div>
+            <input
+              type="radio"
+              id="contact-priority-phone"
+              name="optradio"
+              value="phone"
+              checked
+            />
+            <label for="contact-priority-phone" class="ml-2"> Phone</label>
+            <div></div>
+            <input
+              type="radio"
+              id="contact-priority-both"
+              name="optradio"
+              value="both"
+              checked
+            />
+            <label for="contact-priority-both" class="ml-2"> Both</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="promo-code" class="font-weight-bold w-190"
+            >Promotion Code:</label
+          >
+          <input
+            type="text "
+            class="border-basic"
+            id="promo-code"
+            placeholder=""
+            readonly
+          />
+        </div>
+        <div class="row">
+          <p class="font-weight-bold m-0">Optional Information</p>
+        </div>
+        <div class="row">
+          <p class="font-italic">
+            This information is optional but it helps us to serve you better.
+          </p>
+        </div>
+        <div class="row mb-3">
+          <label for="web" class="font-weight-bold w-190"
+            >My Website Address is:</label
+          >
+          <input type="text " class="border-basic" id="web" />
+        </div>
+        <div class="row">
+          <label for="about-org" class="font-weight-bold w-100"
+            >Tell us more about your Organization:</label
+          >
+          <textarea
+            name=""
+            id="about-org"
+            class="input-text-area border-basic"
+          ></textarea>
+        </div>
+        <div class="row">
+          <label for="about-org" class="font-weight-bold w-100"
+            >What I had REally like to know is:</label
+          >
+          <textarea
+            name=""
+            id="about-org"
+            class="input-text-area border-basic"
+          ></textarea>
+        </div>
+        <div class="row mb-3">
+          <button class="btn-basic font-weight-bold mt-2 border-button">
+            Send Message
+          </button>
+          <input
+            type="button"
+            class="btn-basic font-weight-bold mt-2 ml-2 border-button"
+            onclick="resetForm()"
+            value=" Clear Form"
+          />
+        </div>
+      </form>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

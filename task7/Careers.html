@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body class="body-style m-0 my-font">
+    <header>
+      <h1 class="text-uppercase logo-text m-0">Technovert</h1>
+    </header>
+    <nav class="d-flex justify-content-between">
+      <div class="nav-links-container p-0 m-0">
+        <ul class="p-0 m-0 nav text-uppercase font-size-md font-wt-1000">
+          <li class="nav-item p-2 pl-3"><a href="#">Home</a></li>
+          <li class="nav-item p-2 pl-3"><a href="#">Services</a></li>
+          <li class="nav-item p-2 pl-3 active">
+            <a href="#">Careers</a>
+          </li>
+          <li class="nav-item p-2 pl-3"><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="my-1 mr-3">
+        <img src="blog-icon.png" alt="image failed to load" />
+      </div>
+    </nav>
+    <div class="form-container">
+      <h1 class="m-0 py-3">Careers at Technovert</h1>
+      <p class="form-intro mb-5">
+        We are looking for smart people who love fiddling with code and pour
+        their heart into it.if you are one we wolud like to talk to you. please
+        fill the form below and we will get back to you.
+      </p>
+      <form
+        action="#"
+        class="pl-5"
+        name="myForm"
+        onsubmit="return validateForm()"
+      >
+        <div class="row mb-4">
+          <label for="name" class="font-weight-bold w-150">Name</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="row mb-4">
+          <label for="email" class="font-weight-bold w-150">Email</label>
+          <input
+            type="text"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="row mb-4">
+          <label for="role" class="font-weight-bold w-150">Desired Role</label>
+          <input type="text" id="role" required />
+        </div>
+        <div class="row mb-4">
+          <label class="font-weight-bold w-150">Upload Resume </label>
+          <input type="text" id="file-name" readonly />
+          <input type="file" id="resume" class="d-none" required />
+          <label
+            for="resume"
+            class="btn-basic m-0 ml-3 py-1 px-2 pr-4 font-weight-bold"
+            >Browse..</label
+          >
+        </div>
+        <div class="row mb-4">
+          <label class="w-150"></label>
+          <input
+            type="submit"
+            value="Submit"
+            class="btn-basic py-1 pl-2 pr-5 font-weight-bold"
+          />
+        </div>
+      </form>
+    </div>
+    <script src="js/careerScript.js"></script>
+  </body>
+</html>
